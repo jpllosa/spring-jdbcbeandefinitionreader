@@ -1,5 +1,6 @@
 package llosa.joel.jdbcbeandefinitionreader;
 
+// TODO: change to an interface
 public class CoffeeBean {
 
 	private String weight;

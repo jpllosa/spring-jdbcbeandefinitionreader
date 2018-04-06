@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,7 +25,8 @@ public class Main implements CommandLineRunner {
 	CoffeeBean arabica;
 	
 	@Autowired
-	CoffeeBean java;
+	@Qualifier("java")
+	CoffeeBean javaBean;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
@@ -42,7 +44,9 @@ public class Main implements CommandLineRunner {
 		
 		readRecords();
 		
-		
+		System.out.println(robusta);
+		System.out.println(arabica);
+		System.out.println(javaBean);
 	}
 	
 	private void readRecords() {
@@ -58,16 +62,20 @@ public class Main implements CommandLineRunner {
 	}
 	
 	@Bean(name="robusta")
+//	@Bean
 	public CoffeeBean robustaCoffeeBean() {
 		return new CoffeeBean("1");
 	}
 	
-	@Bean(name="arabica")
+	@Bean("arabica")
+//	@Bean(name="arabica")
+//	@Bean
 	public CoffeeBean arabicaCoffeeBean() {
 		return new CoffeeBean("2");
 	}
 	
 	@Bean(name="java")
+//	@Bean
 	public CoffeeBean javaCoffeeBean() {
 		return new CoffeeBean("3");
 	}
