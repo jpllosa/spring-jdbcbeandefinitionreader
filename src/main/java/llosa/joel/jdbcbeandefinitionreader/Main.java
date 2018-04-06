@@ -28,6 +28,9 @@ public class Main implements CommandLineRunner {
 	@Qualifier("java")
 	CoffeeBean javaBean;
 	
+	@Autowired
+	CoffeeBean barako;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
 	}
@@ -47,6 +50,7 @@ public class Main implements CommandLineRunner {
 		System.out.println(robusta);
 		System.out.println(arabica);
 		System.out.println(javaBean);
+		System.out.println(barako);
 	}
 	
 	private void readRecords() {
@@ -61,23 +65,23 @@ public class Main implements CommandLineRunner {
 		});
 	}
 	
-	@Bean(name="robusta")
-//	@Bean
-	public CoffeeBean robustaCoffeeBean() {
-		return new CoffeeBean("1");
-	}
-	
-	@Bean("arabica")
-//	@Bean(name="arabica")
-//	@Bean
-	public CoffeeBean arabicaCoffeeBean() {
-		return new CoffeeBean("2");
-	}
-	
-	@Bean(name="java")
-//	@Bean
-	public CoffeeBean javaCoffeeBean() {
-		return new CoffeeBean("3");
-	}
+//	@Bean(name="robusta")
+////	@Bean
+//	public CoffeeBean robustaCoffeeBean() {
+//		return new CoffeeBean("1");
+//	}
+//	
+//	@Bean("arabica")
+////	@Bean(name="arabica")
+////	@Bean
+//	public CoffeeBean arabicaCoffeeBean() {
+//		return new CoffeeBean("2");
+//	}
+//	
+//	@Bean(name="java")
+////	@Bean
+//	public CoffeeBean javaCoffeeBean() {
+//		return new CoffeeBean("3");
+//	}
 
 }
