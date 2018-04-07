@@ -18,18 +18,28 @@ public class Main implements CommandLineRunner {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	@Autowired
-	CoffeeBean robusta;
+//	@Autowired
+//	CoffeeBean robusta;
+//	
+//	@Autowired
+//	CoffeeBean arabica;
+//	
+//	@Autowired
+//	@Qualifier("java")
+//	CoffeeBean javaBean;
+//	
+//	@Autowired
+//	CoffeeBean barako;
 	
 	@Autowired
-	CoffeeBean arabica;
+	@Qualifier("rob")
+	Seed robusta;
 	
 	@Autowired
-	@Qualifier("java")
-	CoffeeBean javaBean;
+	Seed arabica;
 	
 	@Autowired
-	CoffeeBean barako;
+	Seed barako;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
@@ -49,7 +59,7 @@ public class Main implements CommandLineRunner {
 		
 		System.out.println(robusta);
 		System.out.println(arabica);
-		System.out.println(javaBean);
+//		System.out.println(javaBean);
 		System.out.println(barako);
 	}
 	
