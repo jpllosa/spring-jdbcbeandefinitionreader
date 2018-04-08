@@ -4,10 +4,8 @@ public class Barako implements Seed {
 
 	private String weight;
 	
-	public Barako() {}
-	
-	public Barako(String weight) {
-		setWeight(weight);
+	public Barako(Arabica w1, CoffeeBean w2) {
+		setWeight(w1.getWeight() + w2.getWeight());
 	}
 	
 	public void setWeight(String weight) {
